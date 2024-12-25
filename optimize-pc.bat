@@ -22,7 +22,8 @@ echo               [+] 7. Enable Ultimate Performance Plan    [+] 8. Optimize fo
 echo               [+] 9. Disable Startup Delay               [+] 10. Disable Last Access Update
 echo               [+] 11. Optimize System Responsiveness     [+] 12. Reduce Foreground Lock Timeout
 echo               [+] 13. Reset Network Stack                [+] 14. Restore Health
-echo               [+] 15. Exit
+echo               [+] 15. Exit                               [+] 16. Check Windows Activation Status
+echo               [+] 17. Check Windows License Information
 echo               [+] (A) About me
 echo.
 echo.
@@ -155,6 +156,20 @@ if "%choice%"=="14" (
 if "%choice%"=="15" (
     echo Exiting script...
     exit
+)
+
+if "%choice%"=="16" (
+    echo Checking Windows activation status...
+    slmgr /xpr
+    pause
+    goto menu
+)
+
+if "%choice%"=="17" (
+    echo Checking Windows license information...
+    slmgr /dli
+    pause
+    goto menu
 )
 
 if /i "%choice%"=="A" (
